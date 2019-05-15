@@ -1,6 +1,8 @@
-package sorting;
+package sorting.impl;
 
-public class BubbleSort {
+import sorting.SortingAlgorithms;
+
+public class BubbleSort implements SortingAlgorithms {
     public void sort(int arry[]) {
         for (int i = 0; i < arry.length - 1; i++) {
             boolean sorted = true;
