@@ -1,7 +1,9 @@
 package sorting;
 
 import sorting.impl.BubbleSort;
+import sorting.impl.HeapSort;
 import sorting.impl.InsertionSort;
+import sorting.impl.MergeSort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,10 +23,15 @@ public class Main {
         int[] intArr = Stream.of(arrayString.split(" ")).mapToInt(Integer::parseInt).toArray();
         SortingAlgorithms insertionSort = new InsertionSort();
         SortingAlgorithms bubbleSort = new BubbleSort();
-        List<SortingAlgorithms> sortingAlgorithmsList = addSortingAlgo(insertionSort, bubbleSort);
+        SortingAlgorithms heapSort = new HeapSort();
+        SortingAlgorithms mergeSort = new MergeSort();
+        List<SortingAlgorithms> sortingAlgorithmsList = addSortingAlgo(heapSort,insertionSort, bubbleSort,mergeSort);
 
         for (SortingAlgorithms sortalgo : sortingAlgorithmsList) {
-            sortalgo.sort(intArr);
+            sortalgo.printArr(intArr, "array before sorting ");
+            int[] copyarray= Arrays.copyOf(intArr, intArr.length) ;
+            sortalgo.sort(copyarray);
+            sortalgo.printArr(copyarray, "array after sorting using "+ sortalgo.getClass().getName());
         }
 
     }

@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class InsertionSort implements SortingAlgorithms {
 
     public void sort(int[] intArr){
-        printArr(intArr, " array before sorting ");
         for (int j = 0; j < intArr.length; j++) {
             int temp = intArr[j];
             int i = j;
@@ -18,8 +17,6 @@ public class InsertionSort implements SortingAlgorithms {
             }
             intArr[i] = temp;
         }
-
-        printArr(intArr, " array after sorting ");
     }
 
 
