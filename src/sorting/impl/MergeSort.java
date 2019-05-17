@@ -1,6 +1,7 @@
-package sorting;
+package sorting.impl;
+import sorting.SortingAlgorithms;
 
-public class MergeSort {
+public class MergeSort implements SortingAlgorithms{
 
     public void sort(int[] arr) {
         if (arr.length < 2) return;
