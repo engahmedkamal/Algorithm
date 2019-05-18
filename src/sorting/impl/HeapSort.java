@@ -28,7 +28,7 @@ public class HeapSort implements SortingAlgorithms {
         }
         if (i != largest) {
             swap(arr, i, largest);
-            heapify(arr, largest, n);
+            heapify(arr, n, largest);
         }
 
     }
