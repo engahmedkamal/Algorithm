@@ -1,9 +1,6 @@
 package sorting;
 
-import sorting.impl.BubbleSort;
-import sorting.impl.HeapSort;
-import sorting.impl.InsertionSort;
-import sorting.impl.MergeSort;
+import sorting.impl.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +22,9 @@ public class Main {
         SortingAlgorithms bubbleSort = new BubbleSort();
         SortingAlgorithms heapSort = new HeapSort();
         SortingAlgorithms mergeSort = new MergeSort();
-        List<SortingAlgorithms> sortingAlgorithmsList = addSortingAlgo(heapSort,insertionSort, bubbleSort,mergeSort);
+        SortingAlgorithms selectionSort = new SelectionSort();
+        SortingAlgorithms quickSort = new QuickSort();
+        List<SortingAlgorithms> sortingAlgorithmsList = addSortingAlgo(heapSort, insertionSort, bubbleSort, mergeSort, selectionSort, quickSort);
 
         for (SortingAlgorithms sortalgo : sortingAlgorithmsList) {
             sortalgo.printArr(intArr, "array before sorting ");
